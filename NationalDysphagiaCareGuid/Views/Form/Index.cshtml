@@ -1,0 +1,519 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Form Page";
+}
+
+<link href="~/css/form/index.css" rel="stylesheet" />
+
+
+<div class="container d-flex align-items-center min-vh-100">
+    <div class="row g-0 justify-content-center">
+        <!-- TITLE -->
+        <div class="col-lg-4 offset-lg-1 mx-0 px-0">
+            <div id="title-container">
+                <img class="covid-image" src="./img/DysphagiaIlustrative1.jpg" alt="Dysphagia Illustrative Image">
+                <h2>DYSPHAGIA</h2>
+                <h3>Self Checker Form</h3>
+                <p>A clinical assessment multi-step form that will assist individuals on deciding when to seek testing or medical care if they suspect they or someone they know has DYSPHAGIA or has throat issues.</p>
+            </div>
+        </div>
+        <!-- FORMS -->
+        <div class="col-lg-7 mx-0 px-0">
+            <div class="progress">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 0%"></div>
+            </div>
+            <div id="qbox-container">
+                <form class="needs-validation" id="dysphagia-user-assessment-form" method="post" name="dysphagia-user-assessment-form" novalidate>
+                    <div id="steps-container">
+                        <!-- INTRODUCTION -->
+                        <div class="step text-center">
+                            <h2>WELCOME</h2>
+                            <p>Welcome to our Dysphagia Patient Web Form.</p>
+                            <p>The form is divided into three sections:</p>
+                            <p><b>Current Condition</b> > <b>Medical History</b> > <b>Personal Information</b></p>
+                            <p>Please take your time to fill out each section accurately and thoroughly. Your detailed responses will help us understand your needs better and allow us to provide you with the appropriate care and support.</p>
+                        </div>
+                        <!-- SECTION: CURRENT CONDITION -->
+                        <div class="step text-center">
+                            <h2>CURRENT CONDITION</h2>
+                            <p>In this section, we will ask you about your current swallowing difficulties and related symptoms.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Do you experience pain when swallowing?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="pain_swallowing_yes" name="pain_swallowing" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="pain_swallowing_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="pain_swallowing_no" name="pain_swallowing" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="pain_swallowing_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Are you unable to swallow medication, liquid, or food?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="unable_swallow_yes" name="unable_swallow" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="unable_swallow_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="unable_swallow_no" name="unable_swallow" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="unable_swallow_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you often cough or choke while eating?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="cough_choke_eating_yes" name="cough_choke_eating" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="cough_choke_eating_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="cough_choke_eating_no" name="cough_choke_eating" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="cough_choke_eating_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you feel short of breath or have difficulty breathing while eating?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="breath_difficulty_eating_yes" name="breath_difficulty_eating" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="breath_difficulty_eating_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="breath_difficulty_eating_no" name="breath_difficulty_eating" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="breath_difficulty_eating_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you keep food in your mouth for an extended period before swallowing?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_mouth_long_yes" name="food_mouth_long" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="food_mouth_long_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_mouth_long_no" name="food_mouth_long" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="food_mouth_long_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you drool while eating?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="drool_eating_yes" name="drool_eating" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="drool_eating_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="drool_eating_no" name="drool_eating" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="drool_eating_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you feel like food gets stuck in your throat?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_stuck_throat_yes" name="food_stuck_throat" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="food_stuck_throat_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_stuck_throat_no" name="food_stuck_throat" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="food_stuck_throat_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you feel nauseous or vomit after eating?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="nausea_vomit_eating_yes" name="nausea_vomit_eating" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="nausea_vomit_eating_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="nausea_vomit_eating_no" name="nausea_vomit_eating" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="nausea_vomit_eating_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you experience a burning sensation in your chest after eating?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="burning_sensation_chest_yes" name="burning_sensation_chest" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="burning_sensation_chest_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="burning_sensation_chest_no" name="burning_sensation_chest" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="burning_sensation_chest_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you feel like food gets stuck in your chest?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_stuck_in_chest_yes" name="food_stuck_in_chest" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="food_stuck_in_chest_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="food_stuck_in_chest_no" name="food_stuck_in_chest" type="radio" value="0" />
+                                    <label class="form-check-label question__label" for="food_stuck_in_chest_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Any other observation that you want to highlight?</h4>
+                            <div class="mt-2">
+                                <input class="form-control" id="other_current_condition" name="other_current_condition" type="text">
+                            </div>
+                        </div>
+                        <!-- SECTION: MEDICAL HISTORY -->
+                        <div class="step text-center">
+                            <h2>MEDICAL HISTORY</h2>
+                            <p>Here, we will gather information about any past medical issues or conditions you have experienced that might relate to your swallowing difficulties.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history Of Dysphagia?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="dysphagia_history_yes" name="dysphagia_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="dysphagia_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="dysphagia_history_no" name="dysphagia_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="dysphagia_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history Of Aspiration/Respiratory issues?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_yes" name="aspiration_respiratory_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_no" name="aspiration_respiratory_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Stroke?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="stroke_history_yes" name="stroke_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="stroke_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="stroke_history_no" name="stroke_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="stroke_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Head/Neck Cancer?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="head_neck_cancer_history_yes" name="head_neck_cancer_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="head_neck_cancer_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="head_neck_cancer_history_no" name="head_neck_cancer_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="head_neck_cancer_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Gastrological issues?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="gastrological_history_yes" name="gastrological_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="gastrological_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="gastrological_history_no" name="gastrological_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="gastrological_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of any Surgeries?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="surgery_history_yes" name="surgery_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="surgery_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="surgery_history_no" name="surgery_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="surgery_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>What is your current mode of Feeding?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_oral" name="current_feeding_mode" type="radio" value="Oral Feeding">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_oral">Oral Feeding</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_rtf" name="current_feeding_mode" type="radio" value="RTF">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_rtf">RTF</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_peg" name="current_feeding_mode" type="radio" value="PEG">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_peg">PEG</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have any other issues in past?</h4>
+                            <div class="mt-2">
+                                <input class="form-control" id="other_issues_history" name="other_issues_history" type="text">
+                            </div>
+                        </div>
+                        <!-- SECTION: PERSONAL INFORMATION -->
+                        <div class="step text-center">
+                            <h2>PERSONAL INFORMATION</h2>
+                            <p>Finally, we will collect your personal contact information to connect with you for further assistance.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Provide us with your personal information:</h4>
+                            <div class="row mt-1">
+                                <div class="col-12 col-lg-6 col-md-6">
+                                    <label class="form-label" for="first_name">First Name:</label>
+                                    <input class="form-control" id="first_name" name="first_name" type="text">
+                                </div>
+                                <div class="col-12 col-lg-6 col-md-6">
+                                    <label class="form-label" for="last_name">Last Name:</label>
+                                    <input class="form-control" id="last_name" name="last_name" type="text">
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <label class="form-label" for="address">Complete Address:</label>
+                                <input class="form-control" id="address" name="address" type="text">
+                            </div>
+                            <div class="mt-2">
+                                <label class="form-label" for="email">Email:</label>
+                                <input class="form-control" id="email" name="email" type="email">
+                            </div>
+                            <div class="mt-2">
+                                <label class="form-label" for="phone">Phone / Mobile Number:</label>
+                                <input class="form-control" id="phone" name="phone" type="text">
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-lg-2 col-md-2 col-3">
+                                    <label class="form-label" for="age">Age:</label>
+                                    <div class="input-container">
+                                        <input class="form-control" id="age" name="age" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div id="input-container">
+                                        <input class="form-check-input" id="gender_male" name="gender" type="radio" value="male">
+                                        <label class="form-check-label radio-lb" for="gender_male">Male</label>
+                                        <input class="form-check-input" id="gender_female" name="gender" type="radio" value="female">
+                                        <label class="form-check-label radio-lb" for="gender_female">Female</label>
+                                        <input class="form-check-input" id="gender_undefined" name="gender" type="radio" value="undefined" checked>
+                                        <label class="form-check-label radio-lb" for="gender_undefined">Rather not say</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="mt-1">
+                                <div class="closing-text">
+                                    <h4>That's about it! Stay healthy!</h4>
+                                    <p>We will assess your information and will let you know soon if you need to get tested for COVID-19.</p>
+                                    <p>Click on the submit button to continue.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="success">
+                            <div class="mt-5">
+                                <h4>Success! We'll get back to you ASAP!</h4>
+                                <p>Meanwhile, clean your hands often, use soap and water, or an alcohol-based hand rub, maintain a safe distance from anyone who is coughing or sneezing and always wear a mask when physical distancing is not possible.</p>
+                                <a class="back-link" href="">Go back from the beginning ➜</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="q-box__buttons">
+                        <button id="prev-btn" type="button">Previous</button>
+                        <button id="next-btn" type="button">Next</button>
+                        <button id="submit-btn" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="preloader-wrapper">
+    <div id="preloader"></div>
+    <div class="preloader-section section-left"></div>
+    <div class="preloader-section section-right"></div>
+</div>
+
+<div class="container" hidden>
+    <div class="text-center">
+        <h3 class="h3 text-center">User Details</h3>
+        <p>Please help us knowing you better.</p>
+        <p>Fill your contact details so that we can contact you. And provide details about your past issues.</p>
+    </div>
+
+    <hr class="my-4" />
+
+    <form class="p-lg-5" id="userDetailsForm">
+        <div class="form-section">
+            <div class="section-title">Personal Information</div>
+            <div class="section-description">Please fill in your personal details below.</div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <label for="firstNameInput" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstNameInput" placeholder="Enter your first name" required />
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="lastNameInput" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastNameInput" placeholder="Enter your last name" required />
+                </div>
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">Gender</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genderInput" id="genderRadio1" value="male" required>
+                        <label class="form-check-label" for="genderRadio1"><i class="fas fa-mars"></i> Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genderInput" id="genderRadio2" value="female" required>
+                        <label class="form-check-label" for="genderRadio2"><i class="fas fa-venus"></i> Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="genderInput" id="genderRadio3" value="other" required>
+                        <label class="form-check-label" for="genderRadio3"><i class="fas fa-genderless"></i> Other</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <label for="ageInput" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="ageInput" placeholder="Enter your age" required />
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="phoneNumberInput" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phoneNumberInput" placeholder="Enter your phone number" required />
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="emailInput" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="emailInput" placeholder="Enter your email address" required />
+                </div>
+            </div>
+        </div>
+        <div class="form-section">
+            <div class="section-title">Medical History</div>
+            <div class="section-description">Please provide your medical history details below.</div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Dysphagia</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfDysphagiaOptions" id="historyOfDysphagiaRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfDysphagiaRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfDysphagiaOptions" id="historyOfDysphagiaRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfDysphagiaRadio2">No</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Aspiration/Respiratory Issues</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfAspirationOptions" id="historyOfAspirationRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfAspirationRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfAspirationOptions" id="historyOfAspirationRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfAspirationRadio2">No</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Stroke</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfStrokeOptions" id="historyOfStrokeRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfStrokeRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfStrokeOptions" id="historyOfStrokeRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfStrokeRadio2">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Head/Neck Cancer</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfCancerOptions" id="historyOfCancerRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfCancerRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfCancerOptions" id="historyOfCancerRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfCancerRadio2">No</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Gastrological Issues</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfGastrologicalIssuesOptions" id="historyOfGastrologicalIssuesRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfGastrologicalIssuesRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfGastrologicalIssuesOptions" id="historyOfGastrologicalIssuesRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfGastrologicalIssuesRadio2">No</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">History Of Any Surgeries</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfSurgeriesOptions" id="historyOfSurgeriesRadio1" value="1" required>
+                        <label class="form-check-label" for="historyOfSurgeriesRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="historyOfSurgeriesOptions" id="historyOfSurgeriesRadio2" value="0" required>
+                        <label class="form-check-label" for="historyOfSurgeriesRadio2">No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-4">
+                    <legend class="col-form-label">Current Mode Of Feeding</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="modeOfFeedingOptions" id="modeOfFeedingRadio1" value="Oral Feeding" required>
+                        <label class="form-check-label" for="modeOfFeedingRadio1">Oral Feeding</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="modeOfFeedingOptions" id="modeOfFeedingRadio2" value="RTF" required>
+                        <label class="form-check-label" for="modeOfFeedingRadio2">RTF</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="modeOfFeedingOptions" id="modeOfFeedingRadio3" value="PEG" required>
+                        <label class="form-check-label" for="modeOfFeedingRadio3">PEG</label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <label for="otherIssueInput" class="form-label">Other Issues In Past</label>
+                    <input type="text" class="form-control" id="otherIssueInput" placeholder="Describe any other past issues" />
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+    <script src="~/js/form/form.js"></script>
+</div>
