@@ -23,6 +23,14 @@
             font-style: normal;
             background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
         }
+
+        header{
+            left: 0;
+            top: 0;
+            width: 100%;
+            position: fixed;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -61,8 +69,13 @@
     <footer class="border-top footer text-muted position-relative">
         <div class="container p-sm-3">
             <div class="row">
-                <div class="col-sm-auto">
-                    <a class="h4" asp-controller="Home" asp-action="Index">National Dysphagia Care Guid</a>
+                <div class="col-sm-6 col-md-6">
+                    <h4 class="h4">About</h4>
+                    <p class="lh-1" style="white-space:pre-wrap;">Welcome to National Dysphagia Care Guide, your trusted resource for understanding and managing dysphagia. We provide essential information about swallowing difficulties and offer a supportive community for patients and caregivers. Our goal is to empower individuals with personalized solutions and connect them with specialized healthcare professionals for comprehensive care.</p>
+                </div>
+
+                <div class="col-sm-3 col-md-3">
+                    <h4 class="h4">Contact Us</h4>
                     <div class="lh-sm">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
@@ -75,7 +88,16 @@
                     </div>
                 </div>
 
-                <div class="col-sm-auto">
+                @* <div class="col-sm-3 col-md-3">
+                    <!-- Logo in the second column -->
+                    <div class="text-center">
+                        <a asp-controller="Home" asp-action="Index">
+                            <img src="~/img/nationaldysphagiacareguid_logo.png" alt="Logo" style="max-width: 150px;" />
+                        </a>
+                    </div>
+                </div> *@
+
+                <div class="col-sm-3 col-md-3">
                     <h4 class="h4">Social</h4>
                     <div class="lh-sm">
                         <a class="d-md-block" href="//api.whatsapp.com/send?phone=919582972948&text=HelloDoctor"><i class="fa-brands fa-whatsapp mx-2"></i>Whatsapp</a>
@@ -83,9 +105,14 @@
                         <a class="d-md-block"><i class="fa-brands fa-instagram mx-2"></i>Instagram</a>
                     </div>
                 </div>
-
             </div>
-            @* &copy; 2024 - NationalDysphagiaCareGuid - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+
+            <!-- Copyright and Privacy section -->
+            <div class="row mt-3">
+                <div class="col">
+                    &copy; 2024 - NationalDysphagiaCareGuid - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </div>
         </div>
     </footer>
 @*     <script src="~/lib/jquery/dist/jquery.min.js"></script>

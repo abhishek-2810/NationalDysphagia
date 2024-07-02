@@ -32,9 +32,118 @@
                             <h2>WELCOME</h2>
                             <p>Welcome to our Dysphagia Patient Web Form.</p>
                             <p>The form is divided into three sections:</p>
-                            <p><b>Current Condition</b> > <b>Medical History</b> > <b>Personal Information</b></p>
+                            <p><b>Medical History</b> > <b>Current Condition</b> > <b>Personal Information</b></p>
                             <p>Please take your time to fill out each section accurately and thoroughly. Your detailed responses will help us understand your needs better and allow us to provide you with the appropriate care and support.</p>
                         </div>
+
+                        <!-- SECTION: MEDICAL HISTORY -->
+                        <div class="step text-center">
+                            <h2>MEDICAL HISTORY</h2>
+                            <p>Here, we will gather information about any past medical issues or conditions you have experienced that might relate to your swallowing difficulties.</p>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history Of Dysphagia?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="dysphagia_history_yes" name="dysphagia_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="dysphagia_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="dysphagia_history_no" name="dysphagia_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="dysphagia_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history Of Aspiration/Respiratory issues?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_yes" name="aspiration_respiratory_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_no" name="aspiration_respiratory_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Stroke?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="stroke_history_yes" name="stroke_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="stroke_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="stroke_history_no" name="stroke_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="stroke_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Head/Neck Cancer?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="head_neck_cancer_history_yes" name="head_neck_cancer_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="head_neck_cancer_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="head_neck_cancer_history_no" name="head_neck_cancer_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="head_neck_cancer_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of Gastrological issues?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="gastrological_history_yes" name="gastrological_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="gastrological_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="gastrological_history_no" name="gastrological_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="gastrological_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have history of any Surgeries?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="surgery_history_yes" name="surgery_history" type="radio" value="1">
+                                    <label class="form-check-label question__label" for="surgery_history_yes">Yes</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="surgery_history_no" name="surgery_history" type="radio" value="0">
+                                    <label class="form-check-label question__label" for="surgery_history_no">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>What is your current mode of Feeding?</h4>
+                            <div class="form-check ps-0 q-box">
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_oral" name="current_feeding_mode" type="radio" value="Oral Feeding">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_oral">Oral Feeding</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_rtf" name="current_feeding_mode" type="radio" value="RTF">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_rtf">RTF</label>
+                                </div>
+                                <div class="q-box__question">
+                                    <input class="form-check-input question__input" id="current_feeding_mode_peg" name="current_feeding_mode" type="radio" value="PEG">
+                                    <label class="form-check-label question__label" for="current_feeding_mode_peg">PEG</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="step">
+                            <h4>Do you have any other issues in past?</h4>
+                            <div class="mt-2">
+                                <input class="form-control" id="other_issues_history" name="other_issues_history" type="text">
+                            </div>
+                        </div>
+
                         <!-- SECTION: CURRENT CONDITION -->
                         <div class="step text-center">
                             <h2>CURRENT CONDITION</h2>
@@ -176,113 +285,7 @@
                                 <input class="form-control" id="other_current_condition" name="other_current_condition" type="text">
                             </div>
                         </div>
-                        <!-- SECTION: MEDICAL HISTORY -->
-                        <div class="step text-center">
-                            <h2>MEDICAL HISTORY</h2>
-                            <p>Here, we will gather information about any past medical issues or conditions you have experienced that might relate to your swallowing difficulties.</p>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history Of Dysphagia?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="dysphagia_history_yes" name="dysphagia_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="dysphagia_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="dysphagia_history_no" name="dysphagia_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="dysphagia_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history Of Aspiration/Respiratory issues?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_yes" name="aspiration_respiratory_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="aspiration_respiratory_history_no" name="aspiration_respiratory_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="aspiration_respiratory_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history of Stroke?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="stroke_history_yes" name="stroke_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="stroke_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="stroke_history_no" name="stroke_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="stroke_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history of Head/Neck Cancer?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="head_neck_cancer_history_yes" name="head_neck_cancer_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="head_neck_cancer_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="head_neck_cancer_history_no" name="head_neck_cancer_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="head_neck_cancer_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history of Gastrological issues?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="gastrological_history_yes" name="gastrological_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="gastrological_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="gastrological_history_no" name="gastrological_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="gastrological_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have history of any Surgeries?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="surgery_history_yes" name="surgery_history" type="radio" value="1">
-                                    <label class="form-check-label question__label" for="surgery_history_yes">Yes</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="surgery_history_no" name="surgery_history" type="radio" value="0">
-                                    <label class="form-check-label question__label" for="surgery_history_no">No</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>What is your current mode of Feeding?</h4>
-                            <div class="form-check ps-0 q-box">
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="current_feeding_mode_oral" name="current_feeding_mode" type="radio" value="Oral Feeding">
-                                    <label class="form-check-label question__label" for="current_feeding_mode_oral">Oral Feeding</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="current_feeding_mode_rtf" name="current_feeding_mode" type="radio" value="RTF">
-                                    <label class="form-check-label question__label" for="current_feeding_mode_rtf">RTF</label>
-                                </div>
-                                <div class="q-box__question">
-                                    <input class="form-check-input question__input" id="current_feeding_mode_peg" name="current_feeding_mode" type="radio" value="PEG">
-                                    <label class="form-check-label question__label" for="current_feeding_mode_peg">PEG</label>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="step">
-                            <h4>Do you have any other issues in past?</h4>
-                            <div class="mt-2">
-                                <input class="form-control" id="other_issues_history" name="other_issues_history" type="text">
-                            </div>
-                        </div>
+                        
                         <!-- SECTION: PERSONAL INFORMATION -->
                         <div class="step text-center">
                             <h2>PERSONAL INFORMATION</h2>
@@ -335,7 +338,7 @@
                             <div class="mt-1">
                                 <div class="closing-text">
                                     <h4>That's about it! Stay healthy!</h4>
-                                    <p>We will assess your information and will let you know soon if you need to get tested for COVID-19.</p>
+                                    <p>Please click Submit button, we will access your provided information.</p>
                                     <p>Click on the submit button to continue.</p>
                                 </div>
                             </div>
