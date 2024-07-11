@@ -2,69 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<style>
-    .webmadewell {
-        background-color: white;
-    }
-
-    /* body {
-            margin: 0;
-        } */
-
-    .sample-header {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-        .sample-header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: MidnightBlue;
-            opacity: 0.3;
-        }
-
-    .sample-header-section {
-        position: relative;
-        padding: 15% 0 10%;
-        max-width: 640px;
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-        font-family: "Montserrat", sans-serif;
-    }
-
-    h1 {
-        font-weight: 500;
-    }
-
-    h2 {
-        font-weight: 400;
-    }
-
-    .sample-section-wrap {
-        position: relative;
-        background-color: white;
-    }
-
-    .sample-section {
-        position: relative;
-        max-width: 1040px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 40px;
-    }
-</style>
+<link href="~/css/home/index.css" rel="stylesheet" />
 
 @* <div style="height:500px;">
     <div id="PageTitleDiv" class="mw-100 h-100">
@@ -75,8 +13,12 @@
 <div>
     <div class="sample-header">
         <div class="sample-header-section text-center">
-            <h1>DYSPHAGIA</h1>
-            <h2>Symptoms, Causes, Stages, Diagnose, Treatment Options</h2>
+            <div class="logo">
+                <img src="~/img/NationalDysphagiaCareGuid_Logo2.png" />
+            </div>
+            <div class="title">
+                <h1>Nation Dysphagia Connecting Guide Application</h1>
+            </div>
         </div>
     </div>
     <div class="sample-section-wrap">
@@ -115,7 +57,7 @@
             <hr class="my-4">
 
             <div class="mb-4">
-                <h3 class="h3">What happens if you ignore the symptoms of dysphagia?</h3>
+                <h3 class="h3">What happens if you ignore dysphagia?</h3>
                 <p>It may lead to:</p>
                 <ul class="list-unstyled">
                     <li>
@@ -132,15 +74,105 @@
 
             <hr class="my-4">
 
+            <div class="mb-4">
+                <h3 class="h3">Whom to consult?</h3>
+                <p>You can consult always a certified dysphagia specialist with RCI license.</p>
+            </div>
+
+            <hr class="my-4">
+
             <div class="text-center">
                 <p>We understand that living with Dysphagia can be challenging, and we're here to help. To better assess your situation and provide you with the best possible care, we have developed a comprehensive form. By completing this form, you will help us gather crucial information about your current condition, medical history, and personal details.</p>
                 <h5>Ready to Get Started?</h5>
                 <p>To access the form and start assessing your situation, please click the link below:</p>
                 <button type="button" class="btn btn-primary" onclick="navigateToPage()">Access Dysphagia Assessment Form</button>
             </div>
+
             <hr class="my-4">
-            <h2 class="h2">Know Your Doctors</h2>
-            <div id="doctorsCarousel" class="carousel slide">
+            
+            <h2 class="h2">Know Your Doctor</h2>
+
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="ratio ratio-1x1">
+                            <img src="~/img/DrGowathi.jpeg" class="card-img" alt="Dr. Gowathi Image" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title">Dr. Karpuram Govathi Nikhila</h4>
+                            <h5 class="card-subtitle mb-2 text-muted">Phd. Psychology, Ms.ASLP</h5>
+                            <p class="card-text">Senior Consultant – Dysphagia – Speech Specialist & Researcher in Dysphagia</p>
+
+                            <!-- Collapsible Section: Areas of Specialization -->
+                            <div class="accordion accordion-flush" id="accordionSpecialization">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSpecialization">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialization" aria-expanded="false" aria-controls="collapseSpecialization">
+                                            Areas of Specialization
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSpecialization" class="accordion-collapse collapse" aria-labelledby="headingSpecialization" data-bs-parent="#accordionSpecialization">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Dysphagia - Assessment & Management</li>
+                                                <li>Speech and language Rehabilitation</li>
+                                                <li>Clinical Research & Trials</li>
+                                                <li>Fiber optic Endoscopic swallow study, Videofluoroscopy study, Barium study, Vital stim electrical therapy</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Section: Publications -->
+                            <div class="accordion accordion-flush" id="accordionPublications">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingPublications">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePublications" aria-expanded="false" aria-controls="collapsePublications">
+                                            Publications
+                                        </button>
+                                    </h2>
+                                    <div id="collapsePublications" class="accordion-collapse collapse" aria-labelledby="headingPublications" data-bs-parent="#accordionPublications">
+                                        <div class="accordion-body">
+                                            <p>38 + National and International Publications</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Collapsible Section: Achievements & Awards -->
+                            <div class="accordion accordion-flush" id="accordionAwards">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingAwards">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAwards" aria-expanded="false" aria-controls="collapseAwards">
+                                            Achievements & Awards
+                                        </button>
+                                    </h2>
+                                    <div id="collapseAwards" class="accordion-collapse collapse" aria-labelledby="headingAwards" data-bs-parent="#accordionAwards">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <li>Loqman Awards (2018) - Best Dysphagia Specialist</li>
+                                                <li>National Gratitude Award (2019) - Best Dysphagia specialist & Youngest Researcher in India</li>
+                                                <li>Global Healthcare Award (2021) - Best Youngest Researcher in Dysphagia</li>
+                                                <li>Received Best Associative Editorial Board Member award from Otolaryngology Journal in 2022</li>
+                                                <li>Insc Awards (2023) - Research Excellence Award</li>
+                                                <li>Influencer Book of World Record (2023) - Youngest Researcher in Dysphagia and Best youngest Founder & Director of Govathi Healthcare Foundation (GHF)</li>
+                                                <li>Received Bharat Gaurav Rathna Award on 4th June 2023</li>
+                                                <li>Received Pillar Of Nation Award as Youngest Scientist on Aug 14th 2023</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+@*             <div id="doctorsCarousel" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
@@ -155,6 +187,87 @@
                                         <p class="card-text">Dysphagia-Assessment & Management</p>
                                         <p class="card-text">Speech and language Rehabilitation</p>
                                         <p class="card-text">Clinical Research & Trials</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card mb-3">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <div class="ratio ratio-1x1">
+                                                <img src="~/img/DrGowathi.jpeg" class="card-img" alt="Dr. Gowathi Image" style="object-fit: cover;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Dr. Karpuram Govathi Nikhila</h4>
+                                                <h5 class="card-subtitle mb-2 text-muted">Phd. Psychology, Ms.ASLP</h5>
+                                                <p class="card-text">Senior Consultant – Dysphagia – Speech Specialist & Researcher in Dysphagia</p>
+
+                                                <!-- Collapsible Section: Areas of Specialization -->
+                                                <div class="accordion accordion-flush" id="accordionSpecialization">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingSpecialization">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecialization" aria-expanded="false" aria-controls="collapseSpecialization">
+                                                                Areas of Specialization
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseSpecialization" class="accordion-collapse collapse" aria-labelledby="headingSpecialization" data-bs-parent="#accordionSpecialization">
+                                                            <div class="accordion-body">
+                                                                <ul>
+                                                                    <li>Dysphagia - Assessment & Management</li>
+                                                                    <li>Speech and language Rehabilitation</li>
+                                                                    <li>Clinical Research & Trials</li>
+                                                                    <li>Fiber optic Endoscopic swallow study, Videofluoroscopy study, Barium study, Vital stim electrical therapy</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Collapsible Section: Publications -->
+                                                <div class="accordion accordion-flush" id="accordionPublications">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingPublications">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePublications" aria-expanded="false" aria-controls="collapsePublications">
+                                                                Publications
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapsePublications" class="accordion-collapse collapse" aria-labelledby="headingPublications" data-bs-parent="#accordionPublications">
+                                                            <div class="accordion-body">
+                                                                <p>38 + National and International Publications</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Collapsible Section: Achievements & Awards -->
+                                                <div class="accordion accordion-flush" id="accordionAwards">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingAwards">
+                                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAwards" aria-expanded="false" aria-controls="collapseAwards">
+                                                                Achievements & Awards
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseAwards" class="accordion-collapse collapse" aria-labelledby="headingAwards" data-bs-parent="#accordionAwards">
+                                                            <div class="accordion-body">
+                                                                <ul>
+                                                                    <li>Loqman Awards (2018) - Best Dysphagia Specialist</li>
+                                                                    <li>National Gratitude Award (2019) - Best Dysphagia specialist & Youngest Researcher in India</li>
+                                                                    <li>Global Healthcare Award (2021) - Best Youngest Researcher in Dysphagia</li>
+                                                                    <li>Received Best Associative Editorial Board Member award from Otolaryngology Journal in 2022</li>
+                                                                    <li>Insc Awards (2023) - Research Excellence Award</li>
+                                                                    <li>Influencer Book of World Record (2023) - Youngest Researcher in Dysphagia and Best youngest Founder & Director of Govathi Healthcare Foundation (GHF)</li>
+                                                                    <li>Received Bharat Gaurav Rathna Award on 4th June 2023</li>
+                                                                    <li>Received Pillar Of Nation Award as Youngest Scientist on Aug 14th 2023</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +357,7 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div>
+ *@        </div>
     </div>
 
     <script>

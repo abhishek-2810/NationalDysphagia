@@ -1,0 +1,103 @@
+﻿.webmadewell {
+    background-color: white;
+}
+
+.sample-header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg"); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0; /* Added padding for better spacing */
+
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #434343, #000000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+    .sample-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: MidnightBlue;
+        opacity: 0.3;
+    }
+
+/* .sample-header-section {
+        position: relative;
+        padding: 15% 0 10%;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        font-family: "Montserrat", sans-serif;
+    } */
+
+.sample-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%; /* Adjust max-width as needed */
+    margin: 0 auto; /* Center align the content */
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Montserrat", sans-serif;
+}
+
+.logo img {
+    max-height: 400px; /* Adjust max-height as needed */
+    padding: 30px 0;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.sample-section-wrap {
+    position: relative;
+    background-color: white;
+}
+
+.sample-section {
+    position: relative;
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .sample-header-section {
+        position: relative;
+        padding: 15% 0 10%;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .sample-header-section {
+        max-width: 95%; /* Adjust max-width for smaller screens */
+    }
+
+    .logo img {
+        max-height: 200px; /* Example smaller logo height for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Example smaller font size for smaller screens */
+    }
+}
