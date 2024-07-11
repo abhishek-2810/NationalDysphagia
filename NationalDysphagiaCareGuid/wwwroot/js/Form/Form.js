@@ -13,7 +13,7 @@ let bodyElement = document.querySelector('body');
 let succcessDiv = document.getElementById('success');
 
 let current_step = 0;
-let stepCount = 24
+let stepCount = 26
 step[current_step].classList.add('d-block');
 if (current_step == 0) {
     prevBtn.classList.add('d-none');
@@ -153,7 +153,7 @@ $(document).ready(function () {
                             data: JSON.stringify(userCurrentCondition),
                             contentType: "application/json",
                             success: function (responseData, textStatus, jqXHR) {
-                                alert("Success")
+                                console.log("Form Submitted Successfully! ID: " + userData.PatientId)
 
                                 postFormSubmissionSteps(userData.PatientId)
                             },
@@ -181,7 +181,7 @@ function postFormSubmissionSteps(id) {
         data: JSON.stringify(id),
         contentType: "application/json",
         success: function (responseData, textStatus, jqXHR) {
-            alert("Email Sent")
+            console.log("Email Sent!")
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(errorThrown);

@@ -16,7 +16,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <style>
-        body{
+        body {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
             font-weight: <weight>;
@@ -24,13 +24,27 @@
             background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
         }
 
-        header{
+        header {
             left: 0;
             top: 0;
             width: 100%;
             position: fixed;
             z-index: 1000;
         }
+
+        .lh-sm a {
+            color: inherit; /* Use the default text color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .lh-sm .social-link {
+            display: block;
+            margin-bottom: 8px; /* Adjust as needed */
+        }
+
+            .lh-sm .social-link i {
+                margin-right: 8px; /* Adjust icon spacing */
+            }
     </style>
 </head>
 <body>
@@ -38,7 +52,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img class="rounded-circle d-inline-block align-text-top" src="~/img/NationalDysphagiaCareGuid_Logo.png" alt="Logo" width="30"/>
+                    <img class="rounded-circle d-inline-block align-text-top" src="~/img/NationalDysphagiaCareGuid_Logo2.png" alt="Logo" width="30" />
                     National Dysphagia Care Guid
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -55,8 +69,6 @@
                         </li>
                     </ul>
                 </div>
-                <i class="fa-brands fa-whatsapp"></i>
-                <i class="fa-regular fa-envelope"></i>
             </div>
         </nav>
     </header>
@@ -77,32 +89,31 @@
                 <div class="col-sm-3 col-md-3">
                     <h4 class="h4">Contact Us</h4>
                     <div class="lh-sm">
-                        <i class="fa-solid fa-location-dot"></i>
                         <div>
-                        <p class="m-sm-0">123 Example Street</p>
-                        <p class="m-sm-0">San Francisco, CA 12345</p>
+                            @* <p class="m-sm-0">123 Example Street</p> *@
+                            <p class="m-sm-0"><i class="fa-solid fa-location-dot"></i> Gurugram, Haryana</p>
                         </div>
                         <div class="row p-sm-2"></div>
-                        <p class="m-sm-0">hi@mygroovydomain.com</p>
-                        <p class="m-sm-0">(123) 456-7890</p>
+                        <p class="m-sm-0"><i class="fa-solid fa-at"></i> gnikhilaks@gmail.com</p>
+                        <p class="m-sm-0"><i class="fa-solid fa-phone"></i> (+91) 958-2972-948</p>
                     </div>
                 </div>
 
                 @* <div class="col-sm-3 col-md-3">
-                    <!-- Logo in the second column -->
-                    <div class="text-center">
-                        <a asp-controller="Home" asp-action="Index">
-                            <img src="~/img/nationaldysphagiacareguid_logo.png" alt="Logo" style="max-width: 150px;" />
-                        </a>
-                    </div>
+                <!-- Logo in the second column -->
+                <div class="text-center">
+                <a asp-controller="Home" asp-action="Index">
+                <img src="~/img/nationaldysphagiacareguid_logo.png" alt="Logo" style="max-width: 150px;" />
+                </a>
+                </div>
                 </div> *@
 
                 <div class="col-sm-3 col-md-3">
                     <h4 class="h4">Social</h4>
                     <div class="lh-sm">
-                        <a class="d-md-block" href="//api.whatsapp.com/send?phone=919582972948&text=HelloDoctor"><i class="fa-brands fa-whatsapp mx-2"></i>Whatsapp</a>
-                        <a class="d-md-block"><i class="fa-brands fa-facebook mx-2"></i>Facebook</a>
-                        <a class="d-md-block"><i class="fa-brands fa-instagram mx-2"></i>Instagram</a>
+                        <a class="social-link d-md-block" href="//api.whatsapp.com/send?phone=919582972948&text=HelloDoctor"><i class="fa-brands fa-whatsapp fa-lg mx-2"></i>Whatsapp</a>
+                        <a class="social-link d-md-block"><i class="fa-brands fa-facebook fa-lg mx-2"></i>Facebook</a>
+                        <a class="social-link d-md-block"><i class="fa-brands fa-instagram fa-lg mx-2"></i>Instagram</a>
                     </div>
                 </div>
             </div>
@@ -115,7 +126,7 @@
             </div>
         </div>
     </footer>
-@*     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @*     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script> *@
     @await RenderSectionAsync("Scripts", required: false)
