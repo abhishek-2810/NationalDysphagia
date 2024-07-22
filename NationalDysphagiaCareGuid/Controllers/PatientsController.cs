@@ -10,9 +10,9 @@ namespace NationalDysphagiaCareGuid.Controllers
     {
         private readonly NationalDysphagiaCareGuidDbContext _context;
 
-        public PatientsController()
+        public PatientsController(NationalDysphagiaCareGuidDbContext context)
         {
-            _context = new NationalDysphagiaCareGuidDbContext();
+            _context = context;
         }
 
 
@@ -20,8 +20,8 @@ namespace NationalDysphagiaCareGuid.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatients()
         {
-            return await _context.Patients.ToListAsync();
-        }
+                return await _context.Patients.ToListAsync();
+            }
 
         // GET: api/Patients/5
         [HttpGet("{id}")]

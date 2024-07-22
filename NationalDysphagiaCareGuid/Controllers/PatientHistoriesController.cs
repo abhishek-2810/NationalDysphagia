@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using NationalDysphagiaCareGuid.Models;
 
 namespace NationalDysphagiaCareGuid.Controllers
@@ -15,9 +16,9 @@ namespace NationalDysphagiaCareGuid.Controllers
     {
         private readonly NationalDysphagiaCareGuidDbContext _context;
 
-        public PatientHistoriesController()
+        public PatientHistoriesController(NationalDysphagiaCareGuidDbContext context)
         {
-            _context = new NationalDysphagiaCareGuidDbContext();
+            _context = context;
         }
 
         // GET: api/PatientHistories

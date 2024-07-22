@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using NationalDysphagiaCareGuid.Models;
 using System.Text.Json.Serialization;
 
 namespace NationalDysphagiaCareGuid
@@ -7,6 +9,8 @@ namespace NationalDysphagiaCareGuid
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<NationalDysphagiaCareGuidDbContext>(options => options.UseSqlite(Path.Combine(builder.Environment.ContentRootPath, "Database", "NationalDysphagiaCareGuid_DB.db")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddJsonOptions(options =>

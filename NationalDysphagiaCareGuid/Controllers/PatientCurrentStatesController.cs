@@ -10,9 +10,9 @@ namespace NationalDysphagiaCareGuid.Controllers
     {
         private readonly NationalDysphagiaCareGuidDbContext _context;
 
-        public PatientCurrentStatesController()
+        public PatientCurrentStatesController(NationalDysphagiaCareGuidDbContext context)
         {
-            _context = new NationalDysphagiaCareGuidDbContext();
+            _context = context;
         }
 
         // GET: api/PatientCurrentStates

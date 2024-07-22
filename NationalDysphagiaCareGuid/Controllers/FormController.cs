@@ -7,6 +7,13 @@ namespace NationalDysphagiaCareGuid.Controllers
 {
     public class FormController : Controller
     {
+        private readonly NationalDysphagiaCareGuidDbContext _context;
+
+        public FormController(NationalDysphagiaCareGuidDbContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -15,14 +22,22 @@ namespace NationalDysphagiaCareGuid.Controllers
         [HttpPost]
         public IActionResult PostFormSubmission([FromBody]int id)
         {
-            PatientsController patients=new PatientsController();
+            PatientsController patients=new PatientsController(_context);
             var patient = patients.GetPatient(id);
 
-            if(patient.IsCompletedSuccessfully && patient.Result.Value != null)
+            try
             {
-                SendEmail(patient.Result.Value);
+                if (patient.IsCompletedSuccessfully && patient.Result.Value != null)
+                {
+                    SendEmail(patient.Result.Value);
+                }
+
+                return Json(new { Status = true });
             }
-            return View();
+            catch (Exception ex)
+            {
+                return Json(new { Status = false, ex.Message });
+            }
         }
 
         private bool SendEmail(Patient patient)
@@ -44,7 +59,7 @@ namespace NationalDysphagiaCareGuid.Controllers
                 var mailMessage = new MailMessage
                 {
                     From = new MailAddress("28a.v10@gmail.com"),
-                    Subject = $"National Dysphagia Care - New Patient Form - {patient.FirstName} {patient.LastName} (Patient ID: {patient.PatientId})",
+                    Subject = $"Nation Dysphagia Connecting Guide - New Patient Form - {patient.FirstName} {patient.LastName} (Patient ID: {patient.PatientId})",
                     Body = $@"<!DOCTYPE html>
                     <html lang=\""en\"">
                        <head>
