@@ -113,6 +113,7 @@ $(document).ready(function () {
         userCurrentCondition.FeelingVomitingAfterEating = $("input[name=\"nausea_vomit_eating\"]:checked").val() ?? 0
         userCurrentCondition.FeelingChestBurningAfterEating = $("input[name=\"burning_sensation_chest\"]:checked").val() ?? 0
         userCurrentCondition.FeelingFoodStuckingInChest = $("input[name=\"food_stuck_in_chest\"]:checked").val() ?? 0
+        userCurrentCondition.Other = $("#other_current_condition").val() ?? 0
 
         userHistory.Dysphagia = $("input[name=\"dysphagia_history\"]:checked").val() ?? 0
         userHistory.RespiratoryIssue = $("input[name=\"aspiration_respiratory_history\"]:checked").val() ?? 0
@@ -121,7 +122,9 @@ $(document).ready(function () {
         userHistory.GastrologicalIssue = $("input[name=\"gastrological_history\"]:checked").val() ?? 0
         userHistory.SurgeriesInPast = $("input[name=\"surgery_history\"]:checked").val() ?? 0
         userHistory.FeedingMode = $("input[name=\"current_feeding_mode\"]:checked").val() ?? ""
-        userHistory.PastSurgeriesDescription = $("#other_issues_history").val() ?? 0
+        userHistory.CompromisingDiet = $("input[name=\"compromising_diet\"]:checked").val() ?? ""
+        userHistory.PsychologicalIssues = $("input[name=\"psychological_history\"]:checked").val() ?? ""
+        userHistory.Other = $("#other_issues_history").val() ?? 0
 
         userData.FirstName = $("#first_name").val()
         userData.LastName = $("#last_name").val()

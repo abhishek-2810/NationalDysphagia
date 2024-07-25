@@ -1,0 +1,215 @@
+﻿@model NationalDysphagiaCareGuid.Models.Patient
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <!-- Patient Details Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Patient Details</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FirstName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.FirstName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.LastName)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.LastName)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Gender)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Gender)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Age)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Age)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PhoneNumber)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+                <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RegistrationDate)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.RegistrationDate)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- Patient History Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Patient History</h4>
+        </div>
+        <div class="card-body">
+            @if (Model.PatientHistories.Any())
+            {
+                var firstHistory = Model.PatientHistories.First();
+                <dl class="row">
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.Dysphagia)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.Dysphagia == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.Dysphagia == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.RespiratoryIssue)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.RespiratoryIssue == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.RespiratoryIssue == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.Stroke)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.Stroke == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.Stroke == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.Cancer)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.Cancer == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.Cancer == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.GastrologicalIssue)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.GastrologicalIssue == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.GastrologicalIssue == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.SurgeriesInPast)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.SurgeriesInPast == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.SurgeriesInPast == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.FeedingMode)</dt>
+                    <dd class="col-sm-4">@Html.DisplayFor(_ => firstHistory.FeedingMode)</dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.CompromisingDiet)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.CompromisingDiet == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.CompromisingDiet == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.PsychologicalIssues)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstHistory.PsychologicalIssues == 1 ? "bg-danger" : "bg-success")">
+                            @(firstHistory.PsychologicalIssues == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstHistory.Other)</dt>
+                    <dd class="col-sm-4">@Html.DisplayFor(_ => firstHistory.Other)</dd>
+                </dl>
+            }
+            else
+            {
+                <p>No patient history available.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Current State Section -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Current State</h4>
+        </div>
+        <div class="card-body">
+            @if (Model.PatientCurrentStates.Any())
+            {
+                var firstState = Model.PatientCurrentStates.First();
+                <dl class="row">
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.CoughingChokingWhileEating)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.CoughingChokingWhileEating == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.CoughingChokingWhileEating == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.DroolingWhileEating)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.DroolingWhileEating == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.DroolingWhileEating == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.FeelingChestBurningAfterEating)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.FeelingChestBurningAfterEating == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.FeelingChestBurningAfterEating == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.FeelingFoodStuckingInChest)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.FeelingFoodStuckingInChest == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.FeelingFoodStuckingInChest == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.FeelingLikeFoodStuckedInThroat)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.FeelingLikeFoodStuckedInThroat == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.FeelingLikeFoodStuckedInThroat == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.FeelingVomitingAfterEating)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.FeelingVomitingAfterEating == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.FeelingVomitingAfterEating == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.HoldingFoodInMouthForLongTime)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.HoldingFoodInMouthForLongTime == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.HoldingFoodInMouthForLongTime == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.Other)</dt>
+                    <dd class="col-sm-4">@Html.DisplayFor(_ => firstState.Other)</dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.PainWhileSwallowing)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.PainWhileSwallowing == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.PainWhileSwallowing == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.RespiratoryDistressWhileEating)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.RespiratoryDistressWhileEating == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.RespiratoryDistressWhileEating == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+
+                    <dt class="col-sm-8">@Html.DisplayNameFor(_ => firstState.UnableToSwallowTheMedication)</dt>
+                    <dd class="col-sm-4">
+                        <span class="badge @(firstState.UnableToSwallowTheMedication == 1 ? "bg-danger" : "bg-success")">
+                            @(firstState.UnableToSwallowTheMedication == 1 ? "Yes" : "No")
+                        </span>
+                    </dd>
+                </dl>
+            }
+            else
+            {
+                <p>No current state available.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+</div>

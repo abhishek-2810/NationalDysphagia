@@ -39,7 +39,7 @@ namespace NationalDysphagiaCareGuid.Controllers
         // PUT: api/PatientCurrentStates/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatientCurrentState(int id, PatientCurrentState patientCurrentState)
+        private async Task<IActionResult> PutPatientCurrentState(int id, PatientCurrentState patientCurrentState)
         {
             if (id != patientCurrentState.CurrentStateId)
             {
@@ -80,7 +80,7 @@ namespace NationalDysphagiaCareGuid.Controllers
 
         // DELETE: api/PatientCurrentStates/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatientCurrentState(int id)
+        private async Task<IActionResult> DeletePatientCurrentState(int id)
         {
             var patientCurrentState = await _context.PatientCurrentStates.FindAsync(id);
             if (patientCurrentState == null)

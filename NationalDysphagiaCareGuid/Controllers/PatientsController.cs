@@ -20,15 +20,15 @@ namespace NationalDysphagiaCareGuid.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Patient>>> GetPatients()
         {
-                return await _context.Patients.ToListAsync();
-            }
+            return await _context.Patients.ToListAsync();
+        }
 
         // GET: api/Patients/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Patient>> GetPatient(int id)
         {
             var patient = await _context.Patients.Include(p => p.PatientHistories)
-                                .Include(p => p.PatientCurrentStates).FirstOrDefaultAsync(p=>p.PatientId== id);
+                                .Include(p => p.PatientCurrentStates).FirstOrDefaultAsync(p => p.PatientId == id);
 
             if (patient == null)
             {
@@ -41,7 +41,7 @@ namespace NationalDysphagiaCareGuid.Controllers
         // PUT: api/Patients/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatient(int id, Patient patient)
+        private async Task<IActionResult> PutPatient(int id, Patient patient)
         {
             if (id != patient.PatientId)
             {
@@ -74,6 +74,8 @@ namespace NationalDysphagiaCareGuid.Controllers
         [HttpPost]
         public async Task<ActionResult<Patient>> PostPatient(Patient patient)
         {
+            patient.RegistrationDate = String.Format("{0:u}", DateTime.UtcNow);
+
             _context.Patients.Add(patient);
             await _context.SaveChangesAsync();
 
@@ -82,7 +84,7 @@ namespace NationalDysphagiaCareGuid.Controllers
 
         // DELETE: api/Patients/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatient(int id)
+        private async Task<IActionResult> DeletePatient(int id)
         {
             var patient = await _context.Patients.FindAsync(id);
             if (patient == null)

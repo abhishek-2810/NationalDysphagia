@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using NationalDysphagiaCareGuid.Models;
 
 namespace NationalDysphagiaCareGuid.Controllers
@@ -45,7 +39,7 @@ namespace NationalDysphagiaCareGuid.Controllers
         // PUT: api/PatientHistories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPatientHistory(int id, PatientHistory patientHistory)
+        private async Task<IActionResult> PutPatientHistory(int id, PatientHistory patientHistory)
         {
             if (id != patientHistory.HistoryId)
             {
@@ -86,7 +80,7 @@ namespace NationalDysphagiaCareGuid.Controllers
 
         // DELETE: api/PatientHistories/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePatientHistory(int id)
+        private async Task<IActionResult> DeletePatientHistory(int id)
         {
             var patientHistory = await _context.PatientHistories.FindAsync(id);
             if (patientHistory == null)

@@ -198,8 +198,7 @@ namespace NationalDysphagiaCareGuid.Controllers
                     </html>",
                     IsBodyHtml = true,
                 };
-                mailMessage.To.Add("28a.v10@gmail.com,gnikhilaks@gmail.com");
-
+                mailMessage.To.Add("28a.v10@gmail.com");//gnikhilaks@gmail.com
                 smtpClient.Send(mailMessage);
                 Console.WriteLine("Email sent successfully.");
                 return true;

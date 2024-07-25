@@ -24,7 +24,6 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
     {
         string dbPath = Path.Combine(_environment.ContentRootPath, "Database", "NationalDysphagiaCareGuid_DB.db");
         optionsBuilder.UseSqlite($"Data Source={dbPath}");
-        //optionsBuilder.UseSqlite("Data Source=.\\Database\\NationalDysphagiaCareGuid_DB.db");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,6 +39,7 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
             entity.Property(e => e.Gender).HasColumnName("gender");
             entity.Property(e => e.LastName).HasColumnName("lastName");
             entity.Property(e => e.PhoneNumber).HasColumnName("phoneNumber");
+            entity.Property(e => e.RegistrationDate).HasColumnName("addedOn");
         });
 
         modelBuilder.Entity<PatientCurrentState>(entity =>
@@ -58,6 +58,7 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
             entity.Property(e => e.FeelingLikeFoodStuckedInThroat).HasColumnName("feelingLikeFoodStuckedInThroat");
             entity.Property(e => e.FeelingVomitingAfterEating).HasColumnName("feelingVomitingAfterEating");
             entity.Property(e => e.HoldingFoodInMouthForLongTime).HasColumnName("holdingFoodInMouthForLongTime");
+            entity.Property(e => e.Other).HasColumnName("other");
             entity.Property(e => e.PainWhileSwallowing).HasColumnName("painWhileSwallowing");
             entity.Property(e => e.Patient).HasColumnName("patient");
             entity.Property(e => e.RespiratoryDistressWhileEating).HasColumnName("respiratoryDistressWhileEating");
@@ -76,11 +77,14 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
 
             entity.Property(e => e.HistoryId).HasColumnName("historyId");
             entity.Property(e => e.Cancer).HasColumnName("cancer");
+            entity.Property(e => e.CompromisingDiet).HasColumnName("compromisingDiet");
             entity.Property(e => e.Dysphagia).HasColumnName("dysphagia");
             entity.Property(e => e.FeedingMode).HasColumnName("feedingMode");
             entity.Property(e => e.GastrologicalIssue).HasColumnName("gastrologicalIssue");
+            entity.Property(e => e.Other).HasColumnName("other");
             entity.Property(e => e.PastSurgeriesDescription).HasColumnName("pastSurgeriesDescription");
             entity.Property(e => e.Patient).HasColumnName("patient");
+            entity.Property(e => e.PsychologicalIssues).HasColumnName("psychologicalIssues");
             entity.Property(e => e.RespiratoryIssue).HasColumnName("respiratoryIssue");
             entity.Property(e => e.Stroke).HasColumnName("stroke");
             entity.Property(e => e.SurgeriesInPast).HasColumnName("surgeriesInPast");
