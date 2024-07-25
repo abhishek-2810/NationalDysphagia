@@ -143,6 +143,36 @@ namespace NationalDysphagiaCareGuid.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> MarkAsRead(int id)
+        {
+            var patient = await _context.Patients.FindAsync(id);
+            if (patient == null)
+            {
+                return NotFound();
+            }
+
+            patient.IsNew = 0;
+            _context.Entry(patient).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!PatientExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
         private bool PatientExists(int id)
         {
             return _context.Patients.Any(e => e.PatientId == id);

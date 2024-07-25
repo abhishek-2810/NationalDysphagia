@@ -140,10 +140,7 @@ namespace NationalDysphagiaCareGuid.Controllers
                                 <td>Feeding Mode</td>
                                 <td>{patient.PatientHistories.First().FeedingMode}</td>
                              </tr>
-                             <tr>
-                                <td>Past Surgeries Description</td>
-                                <td>{patient.PatientHistories.First().PastSurgeriesDescription}</td>
-                             </tr>
+
                           </table>
                           <h3>Current State:</h3>
                           <table>

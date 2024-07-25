@@ -49,7 +49,7 @@ namespace NationalDysphagiaCareGuid.Controllers
             }
 
             _context.Entry(patient).State = EntityState.Modified;
-
+            patient.IsNew = 0;
             try
             {
                 await _context.SaveChangesAsync();
@@ -74,6 +74,8 @@ namespace NationalDysphagiaCareGuid.Controllers
         [HttpPost]
         public async Task<ActionResult<Patient>> PostPatient(Patient patient)
         {
+            // Set Specific Values
+            patient.IsNew = 1;
             patient.RegistrationDate = String.Format("{0:u}", DateTime.UtcNow);
 
             _context.Patients.Add(patient);

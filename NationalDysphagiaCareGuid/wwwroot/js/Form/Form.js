@@ -122,9 +122,9 @@ $(document).ready(function () {
         userHistory.GastrologicalIssue = $("input[name=\"gastrological_history\"]:checked").val() ?? 0
         userHistory.SurgeriesInPast = $("input[name=\"surgery_history\"]:checked").val() ?? 0
         userHistory.FeedingMode = $("input[name=\"current_feeding_mode\"]:checked").val() ?? ""
-        userHistory.CompromisingDiet = $("input[name=\"compromising_diet\"]:checked").val() ?? ""
-        userHistory.PsychologicalIssues = $("input[name=\"psychological_history\"]:checked").val() ?? ""
-        userHistory.Other = $("#other_issues_history").val() ?? 0
+        userHistory.CompromisingDiet = $("input[name=\"compromising_diet\"]:checked").val() ?? 0
+        userHistory.PsychologicalIssues = $("input[name=\"psychological_history\"]:checked").val() ?? 0
+        userHistory.Other = $("#other_issues_history").val() ?? ""
 
         userData.FirstName = $("#first_name").val()
         userData.LastName = $("#last_name").val()

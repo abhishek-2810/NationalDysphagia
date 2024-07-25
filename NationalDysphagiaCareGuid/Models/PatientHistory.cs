@@ -25,9 +25,6 @@ public partial class PatientHistory
     [DisplayName("Are there any other medial issues please mention below.?")]
     public string? Other { get; set; }
 
-    [DisplayName("History of any previous head and neck surgeries/brain surgeries?")]
-    public string? PastSurgeriesDescription { get; set; }
-
     public int Patient { get; set; }
 
     [DisplayName("Any Psychological issues and are you under any psychological medication?")]

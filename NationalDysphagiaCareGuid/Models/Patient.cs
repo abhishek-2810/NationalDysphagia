@@ -28,6 +28,9 @@ public partial class Patient
     [DisplayName("Registered On")]
     public string? RegistrationDate { get; set; }
 
+    [DisplayName("Is New Record")]
+    public int IsNew { get; set; }
+
     [JsonIgnore]
     [DisplayName("Current State Of Patient")]
     public virtual ICollection<PatientCurrentState> PatientCurrentStates { get; set; } = new List<PatientCurrentState>();

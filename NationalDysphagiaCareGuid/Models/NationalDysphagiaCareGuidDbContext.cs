@@ -40,6 +40,7 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
             entity.Property(e => e.LastName).HasColumnName("lastName");
             entity.Property(e => e.PhoneNumber).HasColumnName("phoneNumber");
             entity.Property(e => e.RegistrationDate).HasColumnName("addedOn");
+            entity.Property(e => e.IsNew).HasColumnName("isNew");
         });
 
         modelBuilder.Entity<PatientCurrentState>(entity =>
@@ -82,7 +83,6 @@ public partial class NationalDysphagiaCareGuidDbContext : DbContext
             entity.Property(e => e.FeedingMode).HasColumnName("feedingMode");
             entity.Property(e => e.GastrologicalIssue).HasColumnName("gastrologicalIssue");
             entity.Property(e => e.Other).HasColumnName("other");
-            entity.Property(e => e.PastSurgeriesDescription).HasColumnName("pastSurgeriesDescription");
             entity.Property(e => e.Patient).HasColumnName("patient");
             entity.Property(e => e.PsychologicalIssues).HasColumnName("psychologicalIssues");
             entity.Property(e => e.RespiratoryIssue).HasColumnName("respiratoryIssue");
