@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NationalDysphagiaCareGuid.Miscellaneous;
 using NationalDysphagiaCareGuid.Models;
 
 namespace NationalDysphagiaCareGuid.Controllers
@@ -171,6 +172,13 @@ namespace NationalDysphagiaCareGuid.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> ExportToExcel()
+        {
+            var generator = new ExcelGenerator(_context);
+            var stream = generator.GenerateExcel();
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PatientsData.xlsx");
         }
 
         private bool PatientExists(int id)
